@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <title>電子印鑑ジェネレーターv2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.5/dist/js/uikit-icons.min.js"></script>
+
+</head>
+
+<body>
+
+  <h3><p align="center">電子印鑑作成キットweb改良版v2</p></h3>
+
+    <div id="canvas-box" class="box">
+      <input id="span1" type="text" name="span1" style="text-align: center;" size="8" class="boxp" maxlength="6">
+      <input id="span2" type="texts" name="span2" style="text-align: center;" size="8" class="boxp" maxlength="10">
+      <input id="span3" type="texte" name="span3" style="text-align: center;" size="8" class="boxp" maxlength="6">
+      <div class="line"></div>
+      <a class="circle"></a>
+      <a class="circles"></a>
+      <div class="lines"></div>
+    </div>
+
+
+    <p align="center"><input id="download-btn" type="button" value="　ダウンロード　"></p>
+    
+<script type="text/javascript">//<![CDATA[
+
+var btn = document.getElementById("download-btn");
+btn.addEventListener("click", () => {
+  html2canvas(document.querySelector("#canvas-box")).then(canvas => {
+    let downloadEle = document.createElement("a");
+    downloadEle.href = canvas.toDataURL("image/png");
+    downloadEle.download = "inkan.png";
+    downloadEle.click();
+  });
+})
+
+  //]]>
+  
+    function clickBtn1() {
+    const t1 = document.getElementById("text1").value;
+
+    document.getElementById("span1").value = t1;
+  }
+  function clickBtn2() {
+    const t1 = document.getElementById("text2").value;
+
+    document.getElementById("span2").value = t1;
+  }
+  function clickBtn3() {
+    const t1 = document.getElementById("text3").value;
+
+    document.getElementById("span3").value = t1;
+  }
+  
+  </script>
+
+    <div><input type="texta" id="text1" placeholder="役職名" maxlength="10"></div>
+    <div><input type="textc" id="text2" placeholder="日付" maxlength="10"></div>
+    <div><input type="textz" id="text3" placeholder="名前" maxlength="10"></div>
+<br>
+<p align="center">    <input type="button" value="役職名適用" onclick="clickBtn1()">
+    <input type="button" value="日付適用" onclick="clickBtn2()">
+    <input type="button" value="名前適用" onclick="clickBtn3()"></p>
+    
+    <h5><div class="bun"><form>※上記のイメージでは、ずれているように見えますが、生成される画像では修正されています。</form></div></h5>
+
+</body>
+
+  <style>
+
+*{
+padding:0;
+margin: auto;
+font-size:100%;
+line-height:1.5em;
+}
+
+.box{
+    position: relative;
+}
+.boxp{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+    .circle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      display: inline-block;
+      width: 115px;
+      height: 115px;
+      text-align: center;
+      line-height: 80px;
+      border-radius: 50%;
+      border: solid 4px #FF0000;
+    }
+
+    .line {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      display: block;
+      margin: 0;
+      padding: 0;
+      top: 48px;
+      width: 115px;
+      height: 1.5px;
+      background-color: #FF0000;
+    }
+
+    .lines {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      display: block;
+      margin: 0;
+      padding: 0;
+      top: 78px;
+      width: 115px;
+      height: 1.5px;
+      background-color: #FF0000;
+    }
+
+    input[type="text"] {
+      font-size: 125%;
+      color: #FF0000;
+      font-weight: bold;
+      border: none;
+      overflow:visible;
+      top: 23px;
+      height: 35px;
+    }
+
+    input[type="texts"] {
+      font-size: 110%;
+      color: #FF0000;
+      border: none;
+      overflow:visible;
+      top: 54px;
+    }
+
+    input[type="texte"] {
+      font-size: 115%;
+      color: #FF0000;
+      font-weight: bold;
+      border: none;
+      overflow:visible;
+      top:83px;
+    }
+
+    input[type="texta"] {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      font-size: 100%;
+      top:255px;
+    }
+ 
+    input[type="textc"] {
+       position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      font-size: 100%;
+      top:285px;
+    }
+
+    input[type="textz"] {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      font-size: 100%;
+      top:315px;
+    }
+
+    #canvas-box {
+      width: 127px;
+      height: 127px;
+    }
+
+select, input, textarea, button { 
+     vertical-align:middle; 
+     position:relative; 
+  }
+  
+  .bun {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      top:370px;
+    }
+    
+  .buns {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      top:-1px;
+    }
+      
+  </style>
+
+</html>
