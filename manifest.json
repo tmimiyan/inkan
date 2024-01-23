@@ -10,7 +10,7 @@
       "sizes":"512x512",
       "type": "image/png"
     }],
-  "start_url": "www.inkan.jp",
+  "start_url": "https://www.inkan.jp",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF"
